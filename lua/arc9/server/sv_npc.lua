@@ -219,8 +219,10 @@ end
 
 hook.Add("Think", "ARC9_Think_TryRandomize", ARC9.TryRandomize)
 
+local arc9_free_atts = GetConVar("arc9_free_atts")
+
 local function randomizaegun(wpn)
-    if !GetConVar("arc9_free_atts"):GetBool() then return end
+    if !arc9_free_atts:GetBool() then return end
     wpn:SetNoPresets(true)
 
     timer.Simple(0.1, function()
@@ -353,7 +355,7 @@ end
 
 hook.Add("PlayerCanPickupWeapon", "ARC9_PickupAttachmentTransfer", function(ply, wep)
     if !wep.ARC9 then return end
-    if GetConVar("arc9_free_atts"):GetBool() then return end
+    if arc9_free_atts:GetBool() then return end
     if !ply:HasWeapon(wep:GetClass()) then return end
 
     local atts = ExtractInstalledAtts(wep.Attachments)
@@ -368,7 +370,7 @@ function ARC9.SendPreset(ply, classname, preset)
 	local swep = list.Get( "Weapon" )[classname]
 	if swep == nil then return end
 
-    if !GetConVar("arc9_free_atts"):GetBool() then
+    if !arc9_free_atts:GetBool() then
         local atts = ARC9.GetAttsFromPreset(preset)
         if !atts then return end
 
