@@ -680,6 +680,9 @@ function SWEP:DrawRTReticle(model, atttbl, nonatt, cheap)
                 if shaderenabled then
                     render.SetMaterial(mat_shader_lense)
                     render.DrawScreenQuad()
+                else
+                    render.SetMaterial(cheap and mat_rt_cheap or mat_rt_expensive)
+                    render.DrawScreenQuad()
                 end
 
                 surface.SetDrawColor(0, 0, 0, (1 - sightamt_orig) * (alwaydrwa and 128 or 255))
