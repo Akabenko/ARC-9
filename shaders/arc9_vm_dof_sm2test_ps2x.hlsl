@@ -1,13 +1,11 @@
-
 sampler ImageBuffer : register(s0);
 sampler MaskTexture : register(s1); 
 
-float2 C0               : register(c0);
+float2 C0                : register(c0);
 float2 BUFFER_PIXEL_SIZE : register(c1);
 
 struct PS_INPUT
 {
-    float2 pPos        : VPOS;
     float2 vTexCoord   : TEXCOORD0;
 };
 
@@ -15,10 +13,9 @@ float getFocus(float2 coord)
 {
     float depth = tex2D(ImageBuffer, coord).a;
     float t     = saturate(depth / max(C0.y, 0.00001));
-    return 1.0 - t * t; // quadratic
+    return 1.0 - t * t; 
 }
 
-// Helper for Poisson‑disk rotation
 float2 rot2D(float2 pos, float angle)
 {
     float sinPhi, cosPhi;
@@ -27,7 +24,6 @@ float2 rot2D(float2 pos, float angle)
     return float2(dot(pos, float2(source.y, -source.x)), dot(pos, source));
 }
 
-// Poisson disk samples (pre‑computed)
 static const float2 poisson[12] =
 {
     float2(-0.326, -0.406), float2(-0.840, -0.074), float2(-0.696,  0.457), float2(-0.203,  0.621),
@@ -38,33 +34,35 @@ static const float2 poisson[12] =
 half4 main(PS_INPUT i) : COLOR
 {
     float2 uv = i.vTexCoord.xy;
-
-    // Check mask at the center first to see if we can bail early safely
-    half centerMask = tex2Dlod(MaskTexture, float4(uv, 0.0, 0.0)).r;
-    clip(0.99 - centerMask);
-
-    half3 col      = (half3) 0.0;
-    float random   = frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453);
+    half3 col = (half3) 0.0;
     
-    // Explicitly compute rotations line-by-line
-    float2 rotRow1 = rot2D(float2(1.0, 0.0), random);
-    float2 rotRow2 = rot2D(float2(0.0, 1.0), random);
-    half4 basis    = float4(rotRow1, rotRow2);
+    // OPTIMIZATION 1: Calculate focus ONCE at the center pixel outside the loop.
+    // This breaks the dependency chain and eliminates 12 depth texture fetches.
+    float centerFocus = getFocus(uv);
+
+    float random = frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453);
+    half4 basis  = float4(rot2D(float2(1.0, 0.0), random), rot2D(float2(0.0, 1.0), random));
 
     float2 stepScale = BUFFER_PIXEL_SIZE * C0.x;
 
-    [loop] // Forces the compiler to keep the loop structure
+    [unroll]
     for (int j = 0; j < 12; ++j)
     {
         float2 offset = poisson[j];
         offset = float2(dot(offset, basis.xz), dot(offset, basis.yw));
 
-        float2 coord = uv + offset * stepScale;
+        // Calculate the maximum extent of the blur radius
+        float2 max_coord = uv + offset * stepScale;
         
-        half masked = tex2Dlod(MaskTexture, float4(coord, 0.0, 0.0)).r;
+        // Check the mask at the maximum extent
+        half masked = tex2D(MaskTexture, max_coord).r;
+        clip(0.5 - masked); // Discards if masked == 1
 
-        coord = lerp(uv, coord, getFocus(coord) * (1 - masked));   // focus from alpha channel
-        col += (half3) tex2Dlod(ImageBuffer, float4(coord, 0.0, 0.0)).rgb;
+        // OPTIMIZATION 2: Calculate final coord using the center focus.
+        // We no longer need *(1-masked) because clip() already guaranteed masked is 0.
+        float2 final_coord = lerp(uv, max_coord, centerFocus);
+        
+        col += (half3) tex2D(ImageBuffer, final_coord).rgb;
     }
 
     return half4(col * 0.083h, 1.0h);

@@ -1,6 +1,7 @@
 screenspace_general
 {
 	$pixshader "arc9_vm_dof_ps30"
+	// $pixshader "arc9_vm_dof_sm2test_ps20b" // pixel shader 2.0 variant, still crashes on intel
 	$vertexshader 	"arc9_pp_vs30"
 
 	$basetexture "_rt_FullFrameFB"
