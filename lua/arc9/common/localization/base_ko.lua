@@ -363,11 +363,11 @@ L["badconf.directx.desc"] = "이 컴퓨터의 다이렉트X의 버전이 너무 
 L["badconf.directx.solution"] = "해결법: 다이렉트X 버전 9.0이 제대로 설치되어 있는지 확인해주세요. 제대로 설치되어 있다면 [-dxlevel 숫자]과 같이 시작옵션에 설정되어 있는지 확인해주세요. 이래도 같은 오류가 뜬다면 다이렉트 X 9.0 이상의 버전을 재설치해주세요."
 
 L["badconf.tickrate.title"] = "서버의 틱레이트가 너무 낮습니다."
-L["badconf.tickrate.desc"] = "서버의 틱레이트가 너무 낮습니다. Arc9은 최소 20틱 이상의 환경에서 작동합니다.(66틱 이상을 추천합니다.)"
+L["badconf.tickrate.desc"] = "서버의 틱레이트가 너무 낮습니다. ARC9은 최소 20틱 이상의 환경에서 작동합니다.(66틱 이상을 추천합니다.)"
 L["badconf.tickrate.solution"] = "해결법: 서버장이시라면 서버 틱레이트를 최소 20틱 이상으로 맞춰주세요. 서버장이 아니시라면 해당 서버 커뮤니티에서 건의해주세요."
 
 L["badconf.matbumpmap.title"] = "mat_bumpmap가 비활성화 상태입니다."
-L["badconf.matbumpmap.desc"] = "bumpmap이 비활성화된 상태면, Arc9의 무기가 모두 구려보일 수도 있고, 조준경 부착물들이 오류가 발생할 수 있습니다."
+L["badconf.matbumpmap.desc"] = "bumpmap이 비활성화된 상태면, ARC9의 무기가 모두 구려보일 수도 있고, 조준경 부착물들이 오류가 발생할 수 있습니다."
 L["badconf.matbumpmap.solution"] = "해결법: 콘솔에서 mat_bumpmap 값을 1로 변경해주세요. 만약 프레임 최적화 애드온을 사용한 적 있으면 게리모드 로컬폴더에 있는 autoexec.cfg 파일에 있는 이 명령어도 삭제해주세요."
 
 L["badconf.addons.title"] = "애드온이 너무 많아 LUA파일들을 실행하기에 제한됩니다."
@@ -413,20 +413,20 @@ L["customize.presets.deldef2"] = "무기 설정을 초기화하려면 개발자 
 L["customize.presets.yes"] = "네"
 
 ////////////////////// Tips
-L["tips.arc-9"] = "이건 Arc9입니다. Arc-9이 아니고요."
+L["tips.arc-9"] = "이건 ARC9입니다. ARC-9이 아니고요."
 L["tips.blacklist"] = "부착물을 제한할 수 있는 권한을 가지고 있습니다."
 L["tips.bugs"] = "오류를 발견하셨나요? 그럼 저희 공식 디스코드 서버에 오셔서 알려주세요! 아니면 공식 깃허브 이슈페이지에서 알려주세요!"
 L["tips.custombinds"] = "ARC9은 조작키를 변경할 수 있습니다. 콘솔에 +arc_를 쳐서 무엇을 변경할 수 있는지 확인해주세요!"
 L["tips.cyberdemon"] = "덩치를 한 손가락으로 죽이려면, 죽을 때까지 방아쇠를 당기면 됩니다."
 L["tips.description"] = "저희는 당신이 댓글로 칭얼거리기 전에 창작마당 설명란을 봐주셨으면 좋겠네요."
-L["tips.development"] = "Arc9의 컨텐츠를 개발 중이신가요? 그럼 Arc9 공식 디스코드 서버에 오셔서 많은 도움을 받아가세요!"
+L["tips.development"] = "ARC9의 컨텐츠를 개발 중이신가요? 그럼 ARC9 공식 디스코드 서버에 오셔서 많은 도움을 받아가세요!"
 L["tips.discord"] = "비둘기 국제연맹 디스코드 서버에 가입하세요! 가입 링크는 창작마당 설명란, Arc9 설정 맨 상단에 있습니다."
-L["tips.external"] = "깃허브 버전의 Arc9을 사용하고 계시다면, 항상 최신 버전으로 유지해주세요!"
-L["tips.hints"] = "Arc9 HUD는 조작힌트를 항상 켜둘 수 있습니다."
+L["tips.external"] = "깃허브 버전의 ARC9을 사용하고 계시다면, 항상 최신 버전으로 유지해주세요!"
+L["tips.hints"] = "ARC9 HUD는 조작힌트를 항상 켜둘 수 있습니다."
 L["tips.lean"] = "수동으로 고개를 내밀고 싶으시면 +alt1과 +alt2에 키를 지정해두세요!"
 L["tips.love"] = "개발자들의 작품을 존중해주고 응원해주세요! 이는 개발자들에게 매우 도움이 됩니다!"
 L["tips.m9k"] = "M9K의 익숙하고 단순한 맛을 즐겨보세요!"
-L["tips.official"] = "Arc9 컨텐츠는 창작마당이나 공식 깃허브에서만 다운로드 받아주세요. 재업로드나 향상버전같은 제삼자 애드온은 바이러스 감염의 위험이 있습니다."
+L["tips.official"] = "ARC9 컨텐츠는 창작마당이나 공식 깃허브에서만 다운로드 받아주세요. 재업로드나 향상버전같은 제 3자 애드온은 바이러스 감염의 위험이 있습니다."
 L["tips.presets"] = "즐겨찾는 모딩을 저장하고 친구들에게 공유해보세요!"
 L["tips.settings"] = "이 팁 문구를 포함한 모든 팁 문구는 ARC9에서 끄고 킬 수 있습니다."
 L["tips.tips"] = "이 팁들은 다 고정된 문구입니다. 아마도 다 보실 수 있을 겁니다."
@@ -450,7 +450,7 @@ L["spawnmenu.resetpreset.rmb"] = "우클릭으로 확인"
 
 ////////// Options
 L["spawnmenu.settings"] = "ARC9 설정"
-L["spawnmenu.settings.open"] = "Arc9 설정 화면을 엽니다"
+L["spawnmenu.settings.open"] = "ARC9 설정 화면을 엽니다"
 
 L["spawnmenu.controller.input"] = "입력"
 L["spawnmenu.controller.output"] = "출력"
@@ -501,7 +501,7 @@ L["settings.tabname.quick.desc"] = "중요한 설정들을 이 곳에서 빠르�
 L["settings.quick.lang.title"] = "ARC9 언어"
 L["settings.quick.lang.desc"] = "ARC9에서 보이는 언어들을 여기서 바꿀 수 있습니다.\n\n참고: 모든 무기에 언어가 적용되지는 않습니다!"
 
-L["settings.hud_game.hud_arc9.desc2"] = "Arc9 전용 무기를 들 때 Arc9 전용 HUD가 보이게 됩니다."
+L["settings.hud_game.hud_arc9.desc2"] = "ARC9 전용 무기를 들 때 ARC9 전용 HUD가 보이게 됩니다."
 
 L["settings.tpik.desc2"] = "3인칭에서 부드러운 화면전환을 할 수 있게 합니다. 성능에 영향이 갈 수 있습니다."
 
@@ -523,18 +523,18 @@ L["settings.reset"] = "초기화"
 L["settings.tabname.hud_game"] = "게임 HUD"
 
 ////////// ARC9 HUD
-L["settings.server.hud_game.hud_arc9.title"] = "서버에서 모든 Arc9 무기의 HUD 비활성화"
-L["settings.server.hud_game.hud_arc9.desc"] = "서버에서 힌트를 제외한 모든 Arc9 무기의 HUD를 끕니다."
+L["settings.server.hud_game.hud_arc9.title"] = "서버에서 모든 ARC9 무기의 HUD 비활성화"
+L["settings.server.hud_game.hud_arc9.desc"] = "서버에서 힌트를 제외한 모든 ARC9 무기의 HUD를 끕니다."
 
 L["settings.tabname.arc9_hud"] = "ARC9 HUD"
-L["settings.tabname.arc9_hud.desc"] = "Arc9의 모든 HUD 설정이 이 곳에 있습니다."
+L["settings.tabname.arc9_hud.desc"] = "ARC9의 모든 HUD 설정이 이 곳에 있습니다."
 
-L["settings.hud_game.hud_arc9.title"] = "Arc9 무기의 HUD 활성화"
-L["settings.hud_game.hud_arc9.desc"] = "Arc9 전용 무기의 HUD를 활성화합니다."
+L["settings.hud_game.hud_arc9.title"] = "ARC9 무기의 HUD 활성화"
+L["settings.hud_game.hud_arc9.desc"] = "ARC9 전용 무기의 HUD를 활성화합니다."
 L["settings.hud_game.hud_compact.title"] = "HUD 작게 표시하기"
-L["settings.hud_game.hud_compact.desc"] = "Arc9의 HUD로 필요한 정보만 표시합니다."
-L["settings.hud_game.hud_always.title"] = "Arc9 미전용 무기 HUD 활성화"
-L["settings.hud_game.hud_always.desc"] = "Arc9의 전용 무기가 아니여도 HUD를 표시합니다."
+L["settings.hud_game.hud_compact.desc"] = "ARC9의 HUD로 필요한 정보만 표시합니다."
+L["settings.hud_game.hud_always.title"] = "ARC9 미전용 무기 HUD 활성화"
+L["settings.hud_game.hud_always.desc"] = "ARC9의 전용 무기가 아니여도 HUD를 표시합니다."
 
 L["settings.hud_game.hints.title"] = "힌트 표시"
 L["settings.hud_game.hints.desc"] = "힌트를 항상 띄울지, 일정 시간만 띄울지, 아예 끌지를 정합니다."
@@ -544,7 +544,7 @@ L["settings.hud_game.hints.fade"] = "일정 시간 후 사라짐"
 L["settings.hud_game.hints.on"] = "항상 켜기"
 
 L["settings.hud_game.killfeed_enable.title"] = "킬피드 아이콘 자동생성"
-L["settings.hud_game.killfeed_enable.desc"] = "Arc9 무기로 킬피드를 만들 경우 자동으로 아이콘을 생성할 지 정합니다."
+L["settings.hud_game.killfeed_enable.desc"] = "ARC9 무기로 킬피드를 만들 경우 자동으로 아이콘을 생성할 지 정합니다."
 L["settings.hud_game.killfeed_dynamic.title"] = "아이콘 자동생성"
 L["settings.hud_game.killfeed_dynamic.desc"] = "매 사살마다 총기의 부착물여부 혹은 색상 등등 외형이 자동으로 생성됩니다."
 L["settings.hud_game.killfeed_colour.title"] = "무기의 색상을 표현합니다."
@@ -639,7 +639,7 @@ L["settings.effects.eject_fx.title"] = "탄피 연기 보이기"
 L["settings.effects.eject_fx.desc"] = "탄피 배출 모션에 섬광과 연기를 추가합니다.\n\n성능에 살짝 영향을 줄 수 있습니다."
 
 L["settings.effects.eject_time.title"] = "배출된 탄피 유지시간"
-L["settings.effects.eject_time.desc"] = "Arc9 전용 무기의 탄피가 배출된 후 얼마나 유지되는지 초 단위의 시간을 지정합니다..\n\n-1으로 설정하면 비활성화 됩니다.\n\n지정하는 값에 따라 성능에 살짝 영향을 줄 수 있습니다."
+L["settings.effects.eject_time.desc"] = "ARC9 전용 무기의 탄피가 배출된 후 얼마나 유지되는지 초 단위의 시간을 지정합니다..\n\n-1으로 설정하면 비활성화 됩니다.\n\n지정하는 값에 따라 성능에 살짝 영향을 줄 수 있습니다."
 
 L["settings.effects.muzzle_light.title"] = "총구의 섬광 보이기"
 L["settings.effects.muzzle_light.desc"] = "소음기가 미 장착된 무기의 총구 섬광 유무을 지정합니다.\n\n성능에 살짝 영향을 줄 수 있습니다."
