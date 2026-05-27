@@ -373,10 +373,10 @@ function SWEP:GetViewModelPosition(pos, ang)
             inertiaanchor = self.InertiaCustomAnchor 
         else
             inertiaanchor = Vector(self.CustomizeRotateAnchor)
-            inertiaanchor.x = inertiaanchor.x * ((self.RenderingHolosight or self.RenderingRTScope) and 0.75 or 0.4)
+            -- inertiaanchor.x = inertiaanchor.x * ((self.RenderingHolosight or self.RenderingRTScope) and 0.75 or 0.4)
         end
 
-        local rap_pos, rap_ang = self:RotateAroundPoint2(pos, ang, inertiaanchor, vector_origin, fswayang * -0.5)
+        local rap_pos, rap_ang = self:RotateAroundPoint2(pos, ang, inertiaanchor, vector_origin, fswayang * -1.0)
         pos:Set(rap_pos)
         ang:Set(rap_ang)
     else
