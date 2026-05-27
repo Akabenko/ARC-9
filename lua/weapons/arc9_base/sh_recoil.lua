@@ -246,7 +246,7 @@ do
 
         -- SUBTLE RECOIL MOVEMENT
         if CLIENT and self.SubtleVisualRecoil and (self:GetLastRecoilTime() + 0.75 > CurTime()) then
-            -- ft = math.Clamp(ft, 0.0001, 0.02)
+            ft = math.Clamp(ft, 0.0001, 0.02)
             local springconstant2 = 150 * (self.SubtleVisualRecoilSpeed or 1)
             local springmagnitude2 = 0.3
             local springdamping2 = 2.8
